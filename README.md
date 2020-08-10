@@ -1,5 +1,7 @@
 # Minecraft Damage Buzzer
 
+Check out the short [video demo](https://www.youtube.com/embed/gWROjQkrfDo)!
+
 In short, this project contains three parts, a node.js web-server, a Minecraft
 Java Plugin, and ESP32 C/C++ code.
 
