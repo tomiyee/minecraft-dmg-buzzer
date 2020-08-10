@@ -7,8 +7,10 @@ const uint16_t IN_BUFFER_SIZE = 1000; // size of buffer to hold HTTP request
 const uint16_t OUT_BUFFER_SIZE = 1000;// size of buffer to hold HTTP response
 char request_buffer[IN_BUFFER_SIZE];  // char array buffer to hold HTTP request
 char response_buffer[OUT_BUFFER_SIZE];// char array buffer to hold HTTP response
-char network[] = "Amador_G";
-char password[] = "18281829";
+
+const char network[] = "";
+const char password[] = "";
+const char WEB_SERVER_URL = "";
 
 // variables
 const int LOOP_PERIOD = 100;
@@ -33,9 +35,11 @@ void setup () {
 void loop () {
   // Send the Get Request to the web server
   sprintf(request_buffer, "GET /hurt HTTP/1.1\r\n");
-  strcat(request_buffer, "Host: 73.231.51.90:80 \r\n");
+  char[] line;
+  sprintf(line, "Host: %s:80 \r\n", WEB_SERVER_URL);
+  strcat(request_buffer, line);
   strcat(request_buffer, "\r\n"); //header
-  do_http_request("73.231.51.90", request_buffer, response_buffer, OUT_BUFFER_SIZE, RESPONSE_TIMEOUT, true);
+  do_http_request(WEB_SERVER_URL, request_buffer, response_buffer, OUT_BUFFER_SIZE, RESPONSE_TIMEOUT, true);
 
   // Parse the response (char[]) as an integer
   int parity = 0;
