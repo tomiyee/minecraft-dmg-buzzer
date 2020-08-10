@@ -1,0 +1,8 @@
+main: dev.theng.Buzzer.Main
+name: Damage_Buzzer
+version: 1.0
+author: tommy.seng.heng@gmail.com
+
+commands:
+  takeDamage:
+    description: This will send a post request to the web-server
